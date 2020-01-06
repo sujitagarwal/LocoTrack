@@ -20,15 +20,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Random;
 
-import androidx.annotation.RequiresPermission;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -75,15 +71,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -175,22 +162,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    public static int getMyPermissionAccessCoarseLocation() {
-        return MY_PERMISSION_ACCESS_COARSE_LOCATION;
-    }
-
-    public static int getMyPermissionAccessFineLocation() {
-        return MY_PERMISSION_ACCESS_FINE_LOCATION;
-    }
-
     public void markAndMove(LatLng latLng)
     {
         mMap.clear();
         mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
         mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-        TextView txtLat = (TextView) findViewById(R.id.currentLocationTxtLat);
-        TextView txtLng = (TextView) findViewById(R.id.currentLocationTxtLng);
-        TextView txtName = (TextView) findViewById(R.id.currentLocationTxtName);
+        TextView txtLat = findViewById(R.id.currentLocationTxtLat);
+        TextView txtLng = findViewById(R.id.currentLocationTxtLng);
+        TextView txtName = findViewById(R.id.currentLocationTxtName);
         txtLat.setText("Latitude: " + latLng.latitude);
         txtLng.setText("Longitude: " + latLng.longitude);
         try {
