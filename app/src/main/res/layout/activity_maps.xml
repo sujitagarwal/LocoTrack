@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MapsActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:id="@+id/currentLocationTxtLat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/currentLocationTxtLng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/currentLocationTxtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <Button
+        android:id="@+id/getlocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Current Location"
+        android:onClick="updateCurrentLocation"/>
+
+
+    <Button
+        android:id="@+id/durgapur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Durgapur"
+        android:onClick="goDurgapur"/>
+
+    <Button
+        android:id="@+id/delhi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Delhi"
+        android:onClick="goDelhi"/>
+
+    <Button
+        android:id="@+id/mumbai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Mumbai"
+        android:onClick="goMumbai"/>
+
+    <Button
+        android:id="@+id/kolkata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kolkata"
+        android:onClick="goKolkata"/>
+
+    <Button
+        android:id="@+id/chennai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Chennai"
+        android:onClick="goChennai"/>
+
+    <Button
+        android:id="@+id/random"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Random Location"
+        android:onClick="goRandom"/>
+
+
+
+</LinearLayout>
